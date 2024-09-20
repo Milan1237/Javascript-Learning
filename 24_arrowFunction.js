@@ -40,5 +40,6 @@ console.log(value);
 
 */
 
-let arr = [1 , 2 , 3];
-console.log(arr);
+let char = 'a';
+// console.log(parseInt(3.5));
+

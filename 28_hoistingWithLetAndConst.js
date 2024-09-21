@@ -8,4 +8,5 @@
 // let and const are hoisted. But they are hoisted in another memory location which Temporal Danger Zone.
 // Temporal Danger Zone is the time beetween a variable hoisting and the time the value is intialized.
 // We can not access a variable which in Temporal Danger Zone. That is why a error occured which says that x can not be accessed.
-
+let example = null == 0 ? true : false ;
+console.log(example);

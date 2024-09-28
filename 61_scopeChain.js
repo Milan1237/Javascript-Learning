@@ -30,7 +30,7 @@
 
 
 //let's see how d is found using step by step
-let d = 4 ;//step 4 : then it got the result and log the d. if it is unable to find then it trows an error
+let d = 4 ;//step 4 : then it got the result and log the d. if it is unable to find then it trows an errord
 let a = 2 ;
 function x(){
     //step 3 : then it searches d in x's lexical enviroment and couldn't find it and moves to GEC

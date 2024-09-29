@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching the DOM</title>
+</head>
+<body>
+    <h1 id="title" class="heading">This is the heading</h1>;
+    <button id="btnColorChange">Change the color</button>
+    <button id="btnBgColorChange">Change the background color</button>
+    <div class="box">Milan</div>
+    <div class="box">Kiran</div>
+    <div class="box">Rajat</div>
+    <div class="box">Dipak</div>
+    <div class="box">Suman</div>
+
+
+
+
+
+
+    <script>
+        //using get elements by id
+        /** 
+        let x = document.getElementById("title");
+        let color = document.getElementById("btnColorChange");
+        let bgColor = document.getElementById("btnBgColorChange");
+
+        color.addEventListener("click" , (value)=>{
+            x.style.color = "red";
+        });
+        bgColor.addEventListener("click" , (value)=>{
+            x.style.backgroundColor = "blue";
+        });
+        */
+
+        let a = document.querySelector('#title');
+        let btn1 = document.querySelector("#btnColorChange");
+        let btn2 = document.querySelector("#btnBgColorChange");
+        
+        btn1.addEventListener("click" , (value)=>{
+            a.style.color = "blue";
+            a.style.backgroundColor = "green";
+        })
+        const nodeList = document.querySelectorAll(".box") ;
+        console.log(document.querySelectorAll(".box"));
+        nodeList.forEach((value)=> value.style.color = "green");
+    </script>
+</body>
+</html>

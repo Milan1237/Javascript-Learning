@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increament decreament Project</title>
+</head>
+<style>
+    *{
+        margin: 0px ;
+        padding: 0px;
+        box-sizing: border-box;
+        color: white;
+    }
+    .box{
+        height: 400px;
+        width: 400px;
+        box-sizing: border-box;
+        background-color: rgb(19, 18, 18);
+        border: 2px solid blue;
+        margin: auto;
+    }
+    .box-buttons{
+        display: flex;
+        width: 80%;
+        margin: 40px auto;
+        align-items: center;
+    }
+    .box-buttons button{
+        background-color: gray;
+        color: white;
+        margin: 10px;
+        background-color: green;
+        padding: 0px 10px;
+        
+    }
+    .input-value{
+        color: black;
+        height: 30px;
+        width: 70px;
+    }
+    .value{
+        color: white;
+        margin: 40px auto;
+        font-size: 50px;
+        text-align: center;
+    }
+</style>
+<body>
+    <section class="box">
+        <h1 class="value">0</h1>
+        <div class="box-buttons" >
+            <button class="box-buttons__increament">Increase by <span class="increament-value">1</span></button>
+            <button class="box-buttons__decreament">Decrease by <span class="decreament-value">1</span></button>
+            <input class="input-value" type="number" value="1">
+        </div>
+    </section>
+
+
+
+
+    <script>
+        const increamentBtn = document.querySelector(".box-buttons__increament");
+        const decreamentBtn = document.querySelector(".box-buttons__decreament");
+        const displayValue = document.querySelector(".value");
+        const inputValue = document.querySelector('.input-value');
+        const increamentValue = document.querySelector(".increament-value");
+        const decreamentValue = document.querySelector(".decreament-value");
+
+        increamentBtn.addEventListener("click" , ()=>{
+            console.log(inputValue.value);
+            displayValue.innerText = Number(displayValue.innerText) + Number(inputValue.value);
+        });
+
+        decreamentBtn.addEventListener("click" , ()=>{
+            displayValue.innerText = String (Number(displayValue.innerText) - Number(inputValue.value));
+        });
+
+        inputValue.addEventListener("change",(event)=>{
+            console.log(event);
+            increamentValue.innerText = inputValue.value ;
+            decreamentValue.innerText = inputValue.value ;
+        });
+    </script>
+</body>
+</html>
+
+<!-- 
+ some event Listner: 
+ change: when a user put a value in input box unfocus from the input box then this even is triggered
+ click: when we click on an element
+ input: every time a user inputs a charecter or number it is being triggered
+ focus: when an user click and scroll to an element. But certain elements are focusable : input , a , textarea, button , select
+ keyup & keydown: when a user types something 
+
+-->

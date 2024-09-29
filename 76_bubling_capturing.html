@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubling event in javascript</title>
+</head>
+<body>
+    <div class="grandParent">
+        grandParent
+        <div class="parent">
+            parent
+            <div class="child">child</div>
+        </div>
+    </div>
+
+    <script>
+        const grandParent = document.querySelector(".grandParent");
+        const parent = document.querySelector(".parent");
+        const child = document.querySelector(".child");
+
+        child.addEventListener("click" , ()=>{
+            alert("child clicked");
+        })
+        parent.addEventListener("click" , (event)=>{
+            event.stopPropagation();
+            alert("parent clicked");
+        })
+        grandParent.addEventListener("click" , ()=>{
+            alert("grandParent clicked");
+        });
+        // Even if we click child parent and grandparent event will also be fired
+        // if we want stop it we have to use event.stopPropagation();
+    </script>
+</body>
+</html>

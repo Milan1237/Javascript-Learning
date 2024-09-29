@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    *{
+        box-sizing:border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .parent-Container{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .card{
+        height: fit-content;
+        width: 250px;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;;
+    }
+    .card img{
+        object-fit: contain;
+        width: 230px;
+    }
+    .card-item__detail{
+        width: 230px;
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        font-size: 25px;
+    }
+</style>
+
+<body>
+    <div class="parent-Container">
+        <div class="card">
+            <img src="https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg"
+                alt="image">
+            <div class="card-item__detail">
+                <p class="card__item-name">bingo</p>
+                <p class="card__item-price">₹5</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let data = [
+        
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹5",
+                name: "Bingo"
+            },
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹10",
+                name: "Nescaffe"
+            },
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹30",
+                name: "Amul"
+            },
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹20",
+                name: "Lays"
+            },
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹30",
+                name: "html course"
+            },
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹30",
+                name: "html course"
+            },
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹30",
+                name: "html course"
+            },
+            {
+                img:"https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20plan%20to%20Holiday%20in%202021.jpg",
+                price: "₹30",
+                name: "html course"
+            },
+        ]
+        let parentContainer = document.querySelector(".parent-Container")
+        function appendCard(data,parentContainer){
+            let card = document.createElement('div');
+            let img = document.createElement('img');
+            let cardDetails = document.createElement('div');
+            let cardPrice = document.createElement('p');
+            let cardName = document.createElement('p');
+            card.classList.add('card');
+            img.setAttribute('src', data.img);
+            cardDetails.classList.add('card-item__detail');
+            cardPrice.innerText = data.price ;
+            cardName.innerText = data.name ;
+
+            card.appendChild(img);
+            card.appendChild(cardDetails);
+            cardDetails.appendChild(cardName);
+            cardDetails.appendChild(cardPrice);
+
+
+            parentContainer.appendChild(card);
+            
+        }
+        data.forEach((value)=>{
+            appendCard(value, parentContainer);
+        })
+        
+    </script>
+</body>
+
+</html>

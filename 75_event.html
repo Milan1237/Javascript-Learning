@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 100vh; width: 100%; background-color: aqua;">
+    <div class="box" style="height: 300px; width: 200px; background-color: red;"></div>
+    <script>
+       let box = document.querySelector(".box");
+       box.addEventListener("mouseover",(event)=>{
+        let h = document.createElement("h1");
+        h.innerText= "mouseover";
+        box.appendChild(h);
+       })
+       box.addEventListener("mousedown",(event)=>{
+        let h = document.createElement("h1");
+        h.innerText= "mousedown";
+        box.appendChild(h);
+       })
+       box.addEventListener("dblclick",(event)=>{
+        let h = document.createElement("h1");
+        h.innerText= "dblclick";
+        box.appendChild(h);
+       })
+       box.addEventListener("mouseup",(event)=>{
+        let h = document.createElement("h1");
+        h.innerText= "mouseup";
+        box.appendChild(h);
+       })
+    </script>
+</body>
+</html>

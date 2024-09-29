@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<style>
+    .button-box{
+        height: 500px;
+        width: 500px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        cursor: pointer;
+    }
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
+</style>
+<body>
+    <div class="button-box">
+        <button class="color-button">Red</button>
+        <button class="color-button">Blue</button>
+        <button class="color-button">Pink</button>
+        <button class="color-button">Aqua</button>
+        <button class="color-button">Yellow</button>
+        <button class="color-button">White</button>
+        <button class="color-button">Gray</button>
+        <button class="color-button">Black</button>
+        <button class="color-button">Brown</button>
+    </div>
+
+
+    <script>
+        const parent = document.querySelector(".button-box");
+        const body = document.querySelector('body');
+        parent.addEventListener('click' , (event)=>{
+            body.style.backgroundColor = event.target.innerText.toLowerCase();
+        })
+    </script>
+</body>
+</html>

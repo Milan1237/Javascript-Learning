@@ -103,9 +103,9 @@ const dataset = {
     ]
 };
 //global values
-let questionIndex = 0 ; //current question index
+let questionIndex = 0; //current question index
 let userName = ""; //current user name
-let score = 0 ; //current user score
+let score = 0; //current user score
 
 //accessing the needed node from the existing html
 const quizBox = document.querySelector(".quiz");
@@ -118,22 +118,22 @@ question.classList.add("question");
 
 
 //this function creates options dynamically
-const optionCreation = (options)=>{
-    
+const optionCreation = (options) => {
+
     const form = document.createElement("form");
     form.setAttribute("action", "#");
+
     for (let value in options) {
-        
         const label = document.createElement('label');
         const input = document.createElement('input');
-        input.setAttribute('type', 'radio');
-        input.setAttribute('name', 'q1');
-        input.setAttribute('value', options[value]);
-        label.innerText = options[value];
+        input.type = 'radio';
+        input.name = 'q1'
+        input.value = options[value];
+        label.textContent = options[value];
         label.appendChild(input);
         form.appendChild(label);
     }
-    return form ;
+    return form;
 }
 
 const questionAppend = (questionIndex) => {
@@ -151,33 +151,45 @@ const play = () => {
     userName = document.getElementById("nameBox").value;
     if (userName !== "") {
         document.querySelector(".userName").setAttribute("style", "display:none");
-        questionAppend(0);//0 is because player is playing for the first time
+        questionAppend(0); //0 is because player is playing for the first time
     }
 }
 playButton.addEventListener('click', play);
 
-const checkAnswer = (question , userInput)=> 
-    question.options[question.correctAnswer] == userInput ? true : false ;
+const checkAnswer = (question, userInput) =>
+    question.options[question.correctAnswer] == userInput ? true : false;
 
-function nextQuestion(){
+function nextQuestion() {
     let value = "";
-    if(questionIndex < dataset.data.length -1){
-        if(document.querySelector("input[name=q1]:checked")){
-           
-           value =  document.querySelector("input[name=q1]:checked").value ;
-            console.log(value);
-            let result = checkAnswer(dataset.data[questionIndex] , value );
-            result && score++ ;
-            questionIndex++ ;
+    if (document.querySelector("input[name=q1]:checked")) {
+        //first check wheather current answer is right
+            value = document.querySelector("input[name=q1]:checked").value;
+            let result = checkAnswer(dataset.data[questionIndex], value);
+            result && score++;
+        //then move ahead
+        if (questionIndex < dataset.data.length -1 ) {
+            questionIndex++;
             questionAppend(questionIndex);
-        }else{
-            alert("please select at least one option");
+        }
+        else{
+            quizBox.innerHTML = `<p> Congratulation ${userName}, you have got ${score} out of 10`
         }
     }
-    else{
-        quizBox.innerHTML = `<p>Congratulation ${userName} You have completed the quiz and you have scored ${score} out of 10</p>  `
+    else {
+        alert("please select at least one option");
     }
 }
+
 //continueing the game until 10
 
-document.getElementById('nextButton').addEventListener('click',nextQuestion);
+document.getElementById('nextButton').addEventListener('click', nextQuestion);
+
+
+
+//areas to be improved
+/**
+ * 1> add a database
+ * 2> Leaderboard
+ * 4> questions coming from database
+ * 5> leaderboard coming from database
+ */

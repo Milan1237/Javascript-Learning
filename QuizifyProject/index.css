@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;         /* Use Flexbox to position sections side by side */
+    justify-content: space-between;  /* Distribute space between the two sections */
+    gap: 20px;             /* Add some space between the quiz and leaderboard */
+    padding: 20px;         /* Add some padding around the container */
+    position: relative;
+    min-height: 200px;
+}
+.quizBox{
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.quiz, .leaderboard {
+    flex: 1;  
+    border-radius: 8px;     /* Round the corners slightly */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.quiz {
+    margin-right: 10px;    /* Add some space on the right for visual balance */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+label{
+    margin-right: 20px;
+}
+input{
+    margin-left: 10px;
+}
+
+.leaderboard {
+    max-width: 300px;       /* Limit the width of the leaderboard */
+}
+
+table {
+    width: 100%;           /* Make the table span the full width */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light border for table rows */
+}
+
+th {
+    background-color: #f2f2f2; /* Light background color for the header */
+}
+
+.question {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container that takes full space */
+.userName {
+    position: absolute;    /* Position it relative to the parent */
+    inset: 0;              /* Set top, right, bottom, left to 0 (takes full container space) */
+    display: flex;         /* Use flex to align content */
+    flex-direction: column;/* Align elements vertically */
+    justify-content: center;/* Center content vertically */
+    align-items: center;   /* Center content horizontally */
+    background-color: brown;
+    padding: 20px;
+    color: white;          /* White text color for contrast */
+}
+
+/* Styling for the text */
+.userName p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;    /* Space between the text and the input */
+}
+
+/* Styling for the input field */
+.userName input[type="text"] {
+    width: 80%;              /* Input takes 80% of the container width */
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;      /* Space between the input and button */
+}
+
+/* Styling for the button */
+ button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* Button background color */
+    color: white;              /* White text color */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.userName button:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+}
+

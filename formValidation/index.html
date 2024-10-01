@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="container">
+        <h1>Login Form</h1>
+        <form action="#">
+            <div class="element-box" id="first-name">
+                <input data-field ="firstName" type="text" name="first-name" placeholder="Enter your first Name">
+                <span class="empty-field" >*enter your name</span>
+                <span class="valid-data" >*first letter of first name should be Capital and other letter small</span>
+            </div>
+            <div class="element-box" id="last-name">
+                <input data-field ="lastName" type="text" name="last-name" placeholder="Enter your last name">
+                <span class="empty-field" >*enter last name</span>
+                <span class="valid-data" >*first letter of last name should be Capital and other letter small</span>
+            </div>
+            <div class="element-box" id="phone-number">
+                <input data-field ="phoneNumber" type="text" name="phone-number" placeholder="Enter your number">
+                <span class="empty-field" >*enter your number</span>
+                <span class="valid-data" >*enter a valid mobile number</span>
+            </div>
+            <div class="element-box" id="email">
+                <input data-field ="email" type="email" name="email" placeholder="Enter your email">
+                <span class="empty-field" >*enter your email</span>
+                <span class="valid-data" >*invalid email format</span>
+            </div>
+            <div class="element-box" id="password">
+                <input data-field ="password" type="email" name="password" placeholder="Enter your password">
+                <span class="empty-field" >*enter your password</span>
+                <span class="valid-data" >*password should contain atleast 1 capital , 1 small ,1 special and one number and length should be 8 or more</span>
+            </div>
+            
+            <button id="login">Login</button>
+        </form>
+    </section>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

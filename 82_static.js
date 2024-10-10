@@ -29,3 +29,13 @@ const child6 = new Children('kola', 11);
 
 console.log(Children.filterAge([child1 , child2 , child3 , child4 , child5 , child6] , 5));
 
+
+
+
+let user = {
+    name : "Milan",
+    age: 23 
+}
+let emp =  {
+    salary
+}

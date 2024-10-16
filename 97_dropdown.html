@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown html</title>
+</head>
+<style>
+    .container{
+        height: 400px;
+        width: 400px;
+        border: 2px solid blueviolet;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: scroll;
+    }
+    .search{
+        width: 95%;
+        height: 30px;
+        margin: 0px 5px;
+    }
+    .select{
+        cursor: pointer;
+    }
+    .box{
+        padding: 10px;
+        width: 100%;
+    }
+    .hide{
+        display: none;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2 class="select">Select Country</h2>
+
+        <div class="box hide">
+            <input type="text" class="search" placeholder="search country">
+
+            <div class="contries"></div>
+        </div>
+    </div>
+
+    <script src="./97_dropdown.js"></script>
+</body>
+</html>

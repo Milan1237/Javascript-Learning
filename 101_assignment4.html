@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment4</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        height: 400px;
+        width: 600px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid blueviolet;
+    }
+
+    .favourite {
+        width: 60%;
+        height: 100%;
+        border: 2px solid salmon;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .items{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .icons{
+        height: 10px;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="dropdown">
+            <select name="dropDown" id="countries">
+                <option value="">select your favourite country</option>
+                
+            </select>
+        </div>
+
+        <div class="favourite">
+            <h2>Favourite list</h2>
+            <ul id="favoriteList"></ul>
+        </div>
+
+        <script src="./101_asignMent4.js"></script>
+    </div>
+</body>
+
+</html>

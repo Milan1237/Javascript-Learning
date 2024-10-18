@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 13</title>
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        border: 2px solid blueviolet;
+        padding: 10px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .input {
+        height: 30px;
+        width: 80%;
+        margin: 0px auto;
+    }
+
+    #mainBtn {
+        padding: 5px 10px;
+        background-color: bisque;
+        cursor: pointer;
+        width: 80px;
+    }
+    .savedBox{
+        display: flex;
+        gap: 1.5rem;
+        
+    }
+    .savedItems{
+        width: 100px;
+        padding: 10px;
+        border: 2px solid blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form action="#" id="formContainer">
+            <input type="text" placeholder="enter brand name" id="brand" class="input" required="true" name="brand">
+            <input type="text" placeholder="enter model name" id="model" class="input" required="true" name="model">
+            <input type="text" placeholder="enter year" id="year" class="input" required="true" name="year">
+            <button id="mainBtn">Save</button>
+        </form>
+        <div class="savedBox">
+        </div>
+    </div>
+    <script src="./107_assignment13.js"></script>
+</body>
+
+</html>
